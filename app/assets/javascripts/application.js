@@ -10,7 +10,11 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require bootstrap.min.js
+//= require agents.js.coffee
+//= require customers.js.coffee
+//= require pages.js.coffee
+//= require purchases.js.coffee
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap.min.js
 //= require_tree .
