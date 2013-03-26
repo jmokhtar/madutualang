@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nama: MyString
+  no_kp: MyString
+  umur: MyString
+  alamat: MyString
+  negeri: MyString
+  daerah: MyString
+  tarikh_mula: 2013-03-25
+  aktif: 1
+  pengurus: 1
+
+two:
+  nama: MyString
+  no_kp: MyString
+  umur: MyString
+  alamat: MyString
+  negeri: MyString
+  daerah: MyString
+  tarikh_mula: 2013-03-25
+  aktif: 1
+  pengurus: 1

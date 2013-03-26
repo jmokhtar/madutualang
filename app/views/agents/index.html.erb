@@ -1,0 +1,49 @@
+<% if current_agent.pengurus == 1 %>
+	<h1>Senarai Agen Berdaftar</h1>
+	<br />
+	<table class="table table-bordered table-hover">
+	  <tr>
+		<th>Nama</th>
+		<th>No KP</th>
+		<th>Negeri</th>
+		<th>Daerah</th>
+		<th>Aktif</th>
+		<th>Pengurus</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	  </tr>
+	<% @agents.each do |agent| %>
+	  <tr>
+		<td><%= agent.nama %></td>
+		<td><%= agent.no_kp %></td>
+		<td><%= agent.negeri %></td>
+		<td><%= agent.daerah %></td>
+		<% if agent.aktif == 1 %>
+			<td> Ya </td>
+		<% elsif agent.aktif == 0 %>
+			<td> Tidak </td>
+		<% else %>
+			<td> Belum diproses </td>
+		<% end %>
+		<% if agent.pengurus == 1 %>
+			<td> Ya </td>
+		<% else %>
+			<td> Tidak </td>
+		<% end %>
+		<td><%= link_to "Info", agent %></td>
+		<td><%= link_to "Edit", edit_agent_path(agent) %></td>
+		<td><%= link_to "Hapus", agent, method: :delete, data: { confirm: "Are you sure?" } %></td>
+	  </tr>
+	<% end %>
+	</table>
+
+	<br />
+	<%= link_to "Lihat senarai pelanggan anda", customers_path %>
+<% elsif current_agent.aktif == 0 %>
+	<p>
+		Terima kasih kerana mendaftar dengan syarikat Madu Tualang. Pihak kami akan memproses pendaftaran anda dalam tempoh 3 hari bekerja. 
+	</p>
+<% elsif current_agent.aktif == 1 %>
+	<%= link_to "Lihat senarai pelanggan anda", customers_path %>
+<% end %>

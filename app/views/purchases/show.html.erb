@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Produk:</b>
+  <%= @purchase.produk %>
+</p>
+
+<p>
+  <b>Kuantiti:</b>
+  <%= @purchase.kuantiti %>
+</p>
+
+<p>
+  <b>Tarikh belian:</b>
+  <%= @purchase.tarikh_belian %>
+</p>
+
+<p>
+  <b>Agent:</b>
+  <%= @agents.find{|a| a["id"] == @purchase.agent_id }.nama %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%= @customer.nama %>
+</p>
+
+
+<%= link_to "Edit", edit_purchase_path(@purchase) %> |
+<%= link_to "Back", purchases_path(:customer_id => @customer.id) %>

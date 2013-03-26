@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nama:</b>
+  <%= @customer.nama %>
+</p>
+
+<p>
+  <b>No KP:</b>
+  <%= @customer.no_kp %>
+</p>
+
+<p>
+  <b>Umur:</b>
+  <%= @customer.umur %>
+</p>
+
+<p>
+  <b>Alamat:</b>
+  <%= @customer.alamat %>
+</p>
+
+<p>
+  <b>Negeri:</b>
+  <%= @customer.negeri %>
+</p>
+
+<p>
+  <b>Daerah:</b>
+  <%= @customer.daerah %>
+</p>
+
+<p>
+  <b>Poskod:</b>
+  <%= @customer.poskod %>
+</p>
+
+<p>
+  <b>Penyakit:</b>
+  <%= @customer.penyakit %>
+</p>
+
+<p>
+  <b>Tarikh mula:</b>
+  <%= @customer.tarikh_mula %>
+</p>
+
+<p>
+  <b>Aktif:</b>
+  <% if @customer.aktif == 1 %>
+	Ya
+  <% else %>
+    Tidak
+  <% end %>	
+</p>
+
+<%= link_to "Rekod belian", purchases_path(:customer_id => @customer.id) %> |
+<%= link_to "Edit", edit_customer_path(@customer) %> |
+<%= link_to "Back", customers_path %>

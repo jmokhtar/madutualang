@@ -1,0 +1,39 @@
+<h2>Maklumat Pendaftaran</h2><br />
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %>
+  <%= f.email_field :email %></div>
+  <br />		
+  <div><%= f.label :password %>
+  <%= f.password_field :password %></div>
+  <br />
+  <div><%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %></div>
+  <br />
+  <div><%= f.label :nama_penuh %>
+  <%= f.text_field :nama %></div>
+  <br />
+  <div><%= f.label :no_KP %>
+  <%= f.text_field :no_kp %></div>  
+  <br />
+  <div><%= f.label :umur %>
+  <%= f.text_field :umur %></div>  
+  <br />
+  <div><%= f.label :alamat %>
+  <%= f.text_field :alamat %></div>  
+  <br />
+  <div><%= f.label :negeri %>
+  <%= f.text_field :negeri %></div>  
+  <br />
+  <div><%= f.label :daerah %>
+  <%= f.text_field :daerah %></div>  
+  <br />
+  <div><%= f.label :poskod %>
+  <%= f.text_field :poskod %></div>  
+  <br />  
+  <div><%= f.submit "Daftar" %></div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

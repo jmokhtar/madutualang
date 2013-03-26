@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  produk: MyString
+  kuantiti: 1
+  tarikh_belian: 2013-03-26
+  agent_id: 1
+  customer_id: 1
+
+two:
+  produk: MyString
+  kuantiti: 1
+  tarikh_belian: 2013-03-26
+  agent_id: 1
+  customer_id: 1

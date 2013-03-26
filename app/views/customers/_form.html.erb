@@ -1,0 +1,57 @@
+<%= form_for(@customer) do |f| %>
+  <% if @customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+      <% @customer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :nama %>
+    <%= f.text_field :nama %>
+  </div>
+  <div class="field">
+    <%= f.label :no_KP %>
+    <%= f.text_field :no_kp %>
+  </div>
+  <div class="field">
+    <%= f.label :umur %>
+    <%= f.text_field :umur %>
+  </div>
+  <div class="field">
+    <%= f.label :alamat %>
+    <%= f.text_field :alamat %>
+  </div>
+  <div class="field">
+    <%= f.label :negeri %>
+    <%= f.text_field :negeri %>
+  </div>
+  <div class="field">
+    <%= f.label :daerah %>
+    <%= f.text_field :daerah %>
+  </div>
+  <div class="field">
+    <%= f.label :poskod %>
+    <%= f.text_field :poskod %>
+  </div>
+  <div class="field">
+    <%= f.label :penyakit %>
+    <%= f.text_field :penyakit %>
+  </div>
+  <div class="field">
+    <%= f.label :tarikh_mula %>
+    <%= f.date_select :tarikh_mula %>
+  </div>
+  <div class="field">
+    <%= f.label :aktif %>
+    <%= f.number_field :aktif %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

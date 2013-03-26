@@ -1,0 +1,42 @@
+<h1>Senarai pelanggan berdaftar</h1><br />
+<table class="table table-bordered table-hover">
+  <tr>
+	<% if current_agent.pengurus == 1 %>
+	<th>Agen</th>
+	<% end %>
+    <th>Nama</th>
+    <th>Negeri</th>
+	<th>Daerah</th>
+    <th>Penyakit</th>
+    <th>Tarikh mula</th>
+    <th>Aktif</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customers.each do |customer| %>
+  <tr>
+	<% if current_agent.pengurus == 1 %>
+	<td><%= @agents.find{|a| a["id"] == customer.agent_id }.nama %></td>
+	<% end %>
+    <td><%= link_to customer.nama, customer %></td>
+    <td><%= customer.negeri %></td>
+    <td><%= customer.daerah %></td>
+    <td><%= customer.penyakit %></td>
+    <td><%= customer.tarikh_mula %></td>
+    <td>
+	<% if customer.aktif == 1 %>
+	  Ya
+	<% else %>
+	  Tidak
+	<% end %>
+	</td>
+    <td><%= link_to "Edit", edit_customer_path(customer) %></td>
+    <td><%= link_to "Hapus", customer, method: :delete, data: { confirm: "Are you sure?" } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to "Tambah pelanggan", new_customer_path %>

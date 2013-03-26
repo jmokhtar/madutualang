@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nama:</b>
+  <%= @agent.nama %>
+</p>
+
+<p>
+  <b>No kp:</b>
+  <%= @agent.no_kp %>
+</p>
+
+<p>
+  <b>Umur:</b>
+  <%= @agent.umur %>
+</p>
+
+<p>
+  <b>Alamat:</b>
+  <%= @agent.alamat %>
+</p>
+
+<p>
+  <b>Negeri:</b>
+  <%= @agent.negeri %>
+</p>
+
+<p>
+  <b>Daerah:</b>
+  <%= @agent.daerah %>
+</p>
+
+<p>
+  <b>Poskod:</b>
+  <%= @agent.poskod %>
+</p>
+
+<p>
+  <b>Tarikh mula:</b>
+  <% if @agent.tarikh_mula.nil? %>
+	<%= time_tag @agent.created_at %>
+  <% else %>
+	<%= @agent.tarikh_mula %>
+  <% end %>
+</p>
+
+<p>
+  <b>Aktif:</b>
+  <% if @agent.aktif == 1 %>
+	Ya
+  <% elsif @agent.aktif == 0 %>
+	Tidak
+  <% else %>
+	Belum diproses
+  <% end %>
+</p>
+
+<p>
+  <b>Pengurus:</b>
+  <% if @agent.pengurus == 1 %>
+	Ya
+  <% else %>
+	Tidak
+  <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_agent_path(@agent) %> |
+<%= link_to 'Back', agents_path %>

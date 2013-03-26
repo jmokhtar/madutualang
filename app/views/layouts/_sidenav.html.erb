@@ -1,0 +1,15 @@
+<ul class="nav nav-tabs nav-stacked">
+	<% if agent_signed_in? %>
+	<li>
+		<%= link_to "Senarai agen berdaftar", agents_path %>
+	</li>
+	<li>
+		<%= link_to "Senarai pelanggan berdaftar", customers_path %>
+	</li>
+		<% if current_agent.pengurus == 1 %>
+		<li>
+			<%= link_to "Senarai belian produk terbaru", purchases_path %>
+		</li>
+		<% end %>	
+	<% end %>
+</ul>
